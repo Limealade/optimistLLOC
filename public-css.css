@@ -1,0 +1,250 @@
+/**
+ * Public CSS for registration forms
+ */
+
+/* Form container */
+.srs-registration-form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.srs-registration-form-container h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+/* Form fields */
+.srs-registration-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .srs-registration-form {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .srs-form-field.srs-field-medical_issues,
+    .srs-form-field.srs-field-siblings,
+    .srs-form-field.srs-field-social_media_waiver,
+    .srs-form-field.srs-field-disclosure,
+    .srs-form-field.srs-field-signature,
+    .srs-payment-section,
+    .srs-form-submit {
+        grid-column: 1 / -1;
+    }
+}
+
+.srs-form-field {
+    margin-bottom: 0;
+}
+
+.srs-form-field label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #333;
+}
+
+.srs-form-field input[type="text"],
+.srs-form-field input[type="email"],
+.srs-form-field input[type="tel"],
+.srs-form-field input[type="date"],
+.srs-form-field select,
+.srs-form-field textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background-color: #fff;
+    font-size: 16px;
+    color: #333;
+}
+
+.srs-form-field select {
+    height: 42px;
+}
+
+.srs-form-field textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.srs-radio-group {
+    display: flex;
+    gap: 20px;
+}
+
+.srs-radio-label,
+.srs-checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.srs-required {
+    color: #e32;
+    margin-left: 3px;
+}
+
+/* Signature pad */
+.srs-signature-pad {
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background-color: #fff;
+    margin-top: 5px;
+}
+
+.srs-signature-controls {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-top: 1px solid #ddd;
+}
+
+.srs-clear-signature {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Error handling */
+.srs-error {
+    border-color: #e32 !important;
+}
+
+.srs-form-messages {
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 3px;
+}
+
+.srs-error-message {
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 10px;
+    border-left: 4px solid #e32;
+    border-radius: 3px;
+}
+
+.srs-success-message {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    padding: 10px;
+    border-left: 4px solid #2e7d32;
+    border-radius: 3px;
+}
+
+/* Payment section */
+.srs-payment-section {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background-color: #f8f8f8;
+}
+
+.srs-payment-section h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #333;
+}
+
+.srs-payment-option {
+    margin-bottom: 15px;
+}
+
+.srs-payment-form {
+    margin-top: 10px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background-color: #fff;
+}
+
+/* Square payment form */
+#square-payment-form {
+    min-height: 100px;
+}
+
+/* Age popup */
+.srs-age-popup {
+    position: absolute;
+    margin-top: 5px;
+    padding: 8px 12px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 3px;
+    font-size: 14px;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.srs-age-popup:after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 20px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #333;
+}
+
+/* Submit button */
+.srs-form-submit {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.srs-submit-button {
+    background-color: #4caf50;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.srs-submit-button:hover {
+    background-color: #45a049;
+}
+
+.srs-submit-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Loading state */
+.srs-loading {
+    position: relative;
+    pointer-events: none;
+}
+
+.srs-loading:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    z-index: 10;
+}

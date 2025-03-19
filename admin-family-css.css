@@ -1,0 +1,206 @@
+/**
+ * Admin CSS for Family Accounts
+ */
+
+/* Common admin styles */
+.srs-admin-back-link {
+    margin: 15px 0;
+}
+
+.srs-admin-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.srs-admin-section h2 {
+    margin-top: 0;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.srs-admin-section h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #23282d;
+}
+
+/* Admin columns */
+.srs-admin-columns {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+@media (min-width: 992px) {
+    .srs-admin-columns {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Status indicators */
+.srs-status {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.srs-status-paid {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.srs-status-pending {
+    background-color: #fff3e0;
+    color: #e65100;
+}
+
+.srs-status-none {
+    background-color: #f1f1f1;
+    color: #666;
+}
+
+.srs-status-active {
+    background-color: #e3f2fd;
+    color: #0277bd;
+}
+
+.srs-status-upcoming {
+    background-color: #e0f7fa;
+    color: #0097a7;
+}
+
+.srs-status-ended {
+    background-color: #f5f5f5;
+    color: #616161;
+}
+
+/* Family details */
+.srs-family-details {
+    margin-top: 20px;
+}
+
+/* Child details */
+.srs-child-details {
+    margin-top: 20px;
+}
+
+/* Add season form */
+#srs-add-season-form {
+    margin-bottom: 20px;
+}
+
+/* Season list */
+.column-dates,
+.column-sports,
+.column-status {
+    width: 20%;
+}
+
+/* Responsive tables */
+@media screen and (max-width: 782px) {
+    .srs-admin-section table.widefat {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    
+    .srs-admin-section table.widefat th {
+        display: none;
+    }
+    
+    .srs-admin-section table.widefat tr {
+        display: block;
+        margin-bottom: 15px;
+        border: 1px solid #e5e5e5;
+    }
+    
+    .srs-admin-section table.widefat td {
+        display: block;
+        text-align: right;
+        border-bottom: 1px solid #f0f0f0;
+        padding: 10px;
+    }
+    
+    .srs-admin-section table.widefat td:before {
+        content: attr(data-label);
+        float: left;
+        font-weight: 600;
+    }
+    
+    .srs-admin-section table.widefat td:last-child {
+        border-bottom: none;
+    }
+}
+
+/* Date picker styling */
+input[type="date"] {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+/* Active status highlight */
+.active-season {
+    background-color: #f0f8ff;
+}
+
+/* Dashboard metrics for families */
+.srs-family-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.srs-family-metric-card {
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.srs-family-metric-number {
+    font-size: 24px;
+    font-weight: 600;
+    color: #0073aa;
+    margin-bottom: 5px;
+}
+
+.srs-family-metric-label {
+    color: #72777c;
+    font-size: 13px;
+}
+
+/* Admin notices */
+.srs-admin-notice {
+    margin: 15px 0;
+    padding: 10px 15px;
+    background-color: #fff;
+    border-left: 4px solid #0073aa;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.srs-admin-notice-info {
+    border-left-color: #00a0d2;
+}
+
+.srs-admin-notice-success {
+    border-left-color: #46b450;
+}
+
+.srs-admin-notice-warning {
+    border-left-color: #ffb900;
+}
+
+.srs-admin-notice-error {
+    border-left-color: #dc3232;
+}

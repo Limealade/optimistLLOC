@@ -1,0 +1,443 @@
+/**
+ * Mobile-Responsive Enhancements for Registration Forms
+ */
+
+/* Base mobile styles for all devices */
+.srs-registration-form-container {
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.srs-form-field input[type="text"],
+.srs-form-field input[type="email"],
+.srs-form-field input[type="tel"],
+.srs-form-field input[type="date"],
+.srs-form-field input[type="password"],
+.srs-form-field select,
+.srs-form-field textarea {
+    font-size: 16px; /* Prevents iOS zoom on focus */
+    max-width: 100%;
+}
+
+/* Mobile-first form layout */
+.srs-registration-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Responsive grid columns */
+.srs-form-row {
+    width: 100%;
+}
+
+/* Touch-friendly controls */
+.srs-radio-label,
+.srs-checkbox-label {
+    padding: 8px 0;
+    min-height: 44px; /* Min touch target size */
+    display: flex;
+    align-items: center;
+}
+
+.srs-radio-label input[type="radio"],
+.srs-checkbox-label input[type="checkbox"] {
+    margin-right: 10px;
+    min-width: 20px;
+    min-height: 20px;
+}
+
+/* Better date picker for mobile */
+input[type="date"] {
+    appearance: none;
+    -webkit-appearance: none;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background-color: #fff;
+}
+
+/* Mobile-friendly signature pad */
+.srs-signature-pad {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.srs-signature-pad canvas {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 180px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+
+.srs-signature-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.srs-clear-signature {
+    padding: 10px 15px;
+    min-height: 44px;
+    min-width: 44px;
+}
+
+/* Payment section mobile styles */
+.srs-payment-section {
+    width: 100%;
+}
+
+/* Mobile-friendly buttons */
+.srs-button {
+    padding: 12px 20px;
+    min-height: 44px;
+    font-size: 16px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Family dashboard mobile styles */
+.srs-family-dashboard-container {
+    padding: 15px;
+}
+
+.srs-family-header {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.srs-family-actions {
+    margin-top: 15px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.srs-children-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.srs-child-header {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.srs-child-actions {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
+
+/* Mobile-friendly modals */
+.srs-modal {
+    width: 95%;
+    max-width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.srs-modal-content {
+    padding: 15px;
+}
+
+.srs-modal-header {
+    padding: 10px 15px;
+}
+
+.srs-modal-body {
+    padding: 15px;
+}
+
+/* Family registration mobile styles */
+.srs-family-registration-container {
+    padding: 15px;
+}
+
+.srs-children-checkboxes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Fee preview mobile styles */
+.srs-fee-preview {
+    width: 100%;
+}
+
+.srs-fee-child {
+    flex-direction: column;
+    padding: 10px 0;
+}
+
+/* Login and registration forms mobile styles */
+.srs-family-login-container {
+    padding: 15px;
+}
+
+.srs-login-tabs {
+    display: flex;
+    width: 100%;
+}
+
+.srs-tab-button {
+    flex: 1;
+    text-align: center;
+    padding: 12px 5px;
+    min-height: 44px;
+    font-size: 14px;
+}
+
+/* Loading indicators for touch */
+.srs-loading:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid"><circle cx="50" cy="50" r="35" stroke="#4caf50" stroke-dasharray="55 55" stroke-width="5" fill="none" stroke-linecap="round" transform="rotate(90 50 50)"><animateTransform attributeName="transform" type="rotate" calcMode="linear" values="0 50 50;360 50 50" keyTimes="0;1" dur="1s" begin="0s" repeatCount="indefinite"></animateTransform></circle></svg>');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50px 50px;
+    z-index: 10;
+}
+
+/* Responsive tablet styles */
+@media (min-width: 600px) {
+    .srs-registration-form-container {
+        padding: 20px;
+    }
+    
+    .srs-registration-form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+    
+    .srs-form-field.srs-field-medical_issues,
+    .srs-form-field.srs-field-siblings,
+    .srs-form-field.srs-field-social_media_waiver,
+    .srs-form-field.srs-field-disclosure,
+    .srs-form-field.srs-field-signature,
+    .srs-payment-section,
+    .srs-form-submit {
+        grid-column: 1 / -1;
+    }
+    
+    .srs-button {
+        width: auto;
+        margin-bottom: 0;
+    }
+    
+    .srs-family-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .srs-family-actions {
+        margin-top: 0;
+        width: auto;
+        flex-direction: row;
+    }
+    
+    .srs-children-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+    }
+    
+    .srs-child-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .srs-child-actions {
+        margin-top: 0;
+        width: auto;
+    }
+    
+    .srs-children-checkboxes {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 10px;
+    }
+    
+    .srs-fee-child {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+/* Responsive desktop styles */
+@media (min-width: 992px) {
+    .srs-registration-form-container {
+        padding: 25px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .srs-family-dashboard-container {
+        padding: 25px;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    
+    .srs-family-login-container {
+        padding: 25px;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    .srs-modal {
+        width: 600px;
+        max-width: 80%;
+    }
+}
+
+/* Adapted form styles for dark mode preference */
+@media (prefers-color-scheme: dark) {
+    .srs-registration-form-container,
+    .srs-family-dashboard-container,
+    .srs-family-login-container {
+        background-color: #2b2b2b;
+        color: #f0f0f0;
+        border-color: #444;
+    }
+    
+    .srs-registration-form-container h2,
+    .srs-family-dashboard-container h2,
+    .srs-family-login-container h2,
+    .srs-section-header h3 {
+        color: #f0f0f0;
+    }
+    
+    .srs-form-field label {
+        color: #f0f0f0;
+    }
+    
+    .srs-form-field input[type="text"],
+    .srs-form-field input[type="email"],
+    .srs-form-field input[type="tel"],
+    .srs-form-field input[type="date"],
+    .srs-form-field input[type="password"],
+    .srs-form-field select,
+    .srs-form-field textarea {
+        background-color: #3a3a3a;
+        color: #f0f0f0;
+        border-color: #555;
+    }
+    
+    .srs-form-field input[type="text"]:focus,
+    .srs-form-field input[type="email"]:focus,
+    .srs-form-field input[type="tel"]:focus,
+    .srs-form-field input[type="date"]:focus,
+    .srs-form-field input[type="password"]:focus,
+    .srs-form-field select:focus,
+    .srs-form-field textarea:focus {
+        border-color: #4caf50;
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.25);
+    }
+    
+    .srs-button {
+        background-color: #4caf50;
+        color: #fff;
+    }
+    
+    .srs-button:hover {
+        background-color: #45a049;
+    }
+    
+    .srs-button-outline {
+        background-color: transparent;
+        color: #4caf50;
+        border-color: #4caf50;
+    }
+    
+    .srs-button-outline:hover {
+        background-color: rgba(76, 175, 80, 0.1);
+        color: #4caf50;
+    }
+    
+    .srs-child-card,
+    .srs-dashboard-section,
+    .srs-payment-section,
+    .srs-fee-preview,
+    .srs-signature-pad,
+    .srs-modal-content {
+        background-color: #333;
+        border-color: #444;
+    }
+    
+    .srs-child-header,
+    .srs-modal-header {
+        background-color: #2b2b2b;
+        border-color: #444;
+    }
+    
+    .srs-loading:after {
+        background-color: rgba(43, 43, 43, 0.8);
+    }
+    
+    /* Adjust error and success messages for dark mode */
+    .srs-message-error {
+        background-color: #421818;
+        color: #ff6b6b;
+        border-left-color: #e32;
+    }
+    
+    .srs-message-success {
+        background-color: #1b3a1e;
+        color: #7bed9f;
+        border-left-color: #4caf50;
+    }
+}
+
+/* Print styles for registration forms */
+@media print {
+    .srs-registration-form-container,
+    .srs-family-dashboard-container,
+    .srs-family-login-container {
+        padding: 0;
+        max-width: 100%;
+        margin: 0;
+        box-shadow: none;
+        border: none;
+    }
+    
+    .srs-button,
+    .srs-family-actions,
+    .srs-child-actions,
+    .srs-form-submit {
+        display: none;
+    }
+    
+    .srs-form-field input[type="text"],
+    .srs-form-field input[type="email"],
+    .srs-form-field input[type="tel"],
+    .srs-form-field input[type="date"],
+    .srs-form-field input[type="password"],
+    .srs-form-field select,
+    .srs-form-field textarea {
+        border: 1px solid #ddd;
+        background-color: transparent;
+        padding: 5px;
+    }
+    
+    .srs-signature-pad canvas {
+        border: 1px solid #ddd;
+    }
+    
+    .srs-signature-controls {
+        display: none;
+    }
+}

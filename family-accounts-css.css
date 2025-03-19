@@ -1,0 +1,574 @@
+/**
+ * CSS for Family Accounts System
+ */
+
+/* Common Styles */
+.srs-form {
+    margin-bottom: 20px;
+}
+
+.srs-form-row {
+    margin-bottom: 15px;
+}
+
+.srs-form-row-2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.srs-form-row-3 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+@media (min-width: 768px) {
+    .srs-form-row-2 {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .srs-form-row-3 {
+        grid-template-columns: 2fr 1fr 1fr;
+    }
+}
+
+.srs-form-field {
+    margin-bottom: 0;
+}
+
+.srs-form-field label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #333;
+}
+
+.srs-form-field input[type="text"],
+.srs-form-field input[type="email"],
+.srs-form-field input[type="tel"],
+.srs-form-field input[type="password"],
+.srs-form-field input[type="date"],
+.srs-form-field select,
+.srs-form-field textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background-color: #fff;
+    font-size: 16px;
+    color: #333;
+}
+
+.srs-form-field select {
+    height: 42px;
+}
+
+.srs-form-field textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.srs-radio-group {
+    display: flex;
+    gap: 20px;
+}
+
+.srs-radio-label,
+.srs-checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-weight: normal;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+.srs-radio-label input[type="radio"],
+.srs-checkbox-label input[type="checkbox"] {
+    margin-top: 3px;
+}
+
+.srs-form-actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.srs-button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.srs-button:hover {
+    background-color: #45a049;
+    color: white;
+}
+
+.srs-button-small {
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+.srs-button-outline {
+    background-color: transparent;
+    color: #4caf50;
+    border: 1px solid #4caf50;
+}
+
+.srs-button-outline:hover {
+    background-color: #f0f0f0;
+    color: #45a049;
+}
+
+.srs-button-danger {
+    background-color: #e53935;
+    color: white;
+}
+
+.srs-button-danger:hover {
+    background-color: #d32f2f;
+}
+
+.srs-button-outline.srs-button-danger {
+    background-color: transparent;
+    color: #e53935;
+    border: 1px solid #e53935;
+}
+
+.srs-button-outline.srs-button-danger:hover {
+    background-color: #ffebee;
+    color: #d32f2f;
+}
+
+.srs-message {
+    padding: 10px 15px;
+    border-radius: 3px;
+    margin-top: 15px;
+}
+
+.srs-message-success {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border-left: 4px solid #4caf50;
+}
+
+.srs-message-error {
+    background-color: #ffebee;
+    color: #c62828;
+    border-left: 4px solid #e53935;
+}
+
+.srs-empty-state {
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 3px;
+    text-align: center;
+    color: #666;
+}
+
+/* Login/Registration Page */
+.srs-family-login-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.srs-login-tabs {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.srs-tab-button {
+    padding: 10px 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: #666;
+    outline: none;
+}
+
+.srs-tab-button.active {
+    color: #4caf50;
+    border-bottom: 2px solid #4caf50;
+}
+
+.srs-tab-content {
+    display: none;
+}
+
+.srs-tab-content.active {
+    display: block;
+}
+
+.srs-login-intro {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+/* Family Dashboard */
+.srs-family-dashboard-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.srs-family-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.srs-family-header h2 {
+    margin: 0;
+}
+
+.srs-family-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.srs-dashboard-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.srs-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.srs-section-header h3 {
+    margin: 0;
+}
+
+.srs-family-info {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+@media (min-width: 768px) {
+    .srs-family-info {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.srs-info-row {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.srs-info-label {
+    width: 100px;
+    font-weight: bold;
+    color: #555;
+}
+
+.srs-info-value {
+    flex: 1;
+}
+
+/* Children Cards */
+.srs-children-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .srs-children-list {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+}
+
+.srs-child-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.srs-child-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+}
+
+.srs-child-header h4 {
+    margin: 0;
+}
+
+.srs-child-actions {
+    display: flex;
+    gap: 5px;
+}
+
+.srs-child-info {
+    padding: 15px;
+}
+
+.srs-child-registrations {
+    padding: 15px;
+    border-top: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+
+.srs-child-registrations h5 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+.srs-registration-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.srs-registration-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-bottom: 1px dashed #ddd;
+    font-size: 14px;
+}
+
+.srs-registration-item:last-child {
+    border-bottom: none;
+}
+
+.srs-registration-status {
+    font-weight: bold;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+.srs-status-paid {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.srs-status-pending {
+    background-color: #fff3e0;
+    color: #e65100;
+}
+
+.srs-status-none {
+    background-color: #f1f1f1;
+    color: #666;
+}
+
+/* Registration Options */
+.srs-registration-options {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .srs-registration-options {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+}
+
+.srs-registration-option {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.srs-option-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.srs-option-header h4 {
+    margin: 0;
+}
+
+.srs-season-label {
+    background-color: #4caf50;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.srs-option-description {
+    margin-bottom: 20px;
+    color: #666;
+    font-size: 14px;
+}
+
+.srs-register-children {
+    text-align: center;
+}
+
+/* Modals */
+.srs-modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.srs-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 5px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    z-index: 1001;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.srs-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #ddd;
+    background-color: #f0f0f0;
+}
+
+.srs-modal-header h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.srs-modal-close {
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+}
+
+.srs-modal-body {
+    padding: 20px;
+}
+
+.srs-children-checkboxes {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+@media (min-width: 768px) {
+    .srs-children-checkboxes {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.srs-social-media-waiver,
+.srs-disclosure {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f5f5f5;
+    border-radius: 3px;
+}
+
+.srs-signature-section {
+    margin-top: 20px;
+}
+
+.srs-signature-pad {
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background-color: #fff;
+    margin-top: 5px;
+}
+
+.srs-signature-controls {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-top: 1px solid #ddd;
+}
+
+.srs-clear-signature {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.srs-fee-preview {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f5f5f5;
+    border-radius: 3px;
+}
+
+.srs-fee-preview h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.srs-fee-breakdown {
+    margin-bottom: 10px;
+}
+
+.srs-fee-child {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-bottom: 1px dashed #ddd;
+}
+
+.srs-fee-child:last-child {
+    border-bottom: none;
+}
+
+.srs-fee-total {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+    font-weight: bold;
+    font-size: 16px;
+}
